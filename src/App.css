@@ -1,0 +1,29 @@
+
+body{
+  background-color: #1f2f3f;
+}
+.add::before{
+  content:'';
+  position: absolute;
+  background: white;
+  left:18%;
+  top:50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height:18px;
+}
+
+.add::after{
+    content:'';
+    position: absolute;
+    background: white;
+    left:9%;
+    top:50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height:3px;
+  }
+
+
+
+  
