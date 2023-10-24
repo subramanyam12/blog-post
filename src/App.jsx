@@ -4,7 +4,7 @@ import ApiFetch from './ApiFetch'
 import Form from './components/Form'
 import Login from './components/Login'
 import {useCookies} from 'react-cookie'
-
+import {useNavigate} from "react-router-dom"
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   const [updatebool, setupdatebool] = useState(true)
  const [formactive, setformactive] = useState(false)
  const [token,settoken,removetoken] = useCookies(['mytoken'])
-  
+  const navigate=useNavigate()
 
   useEffect(()=>{
     ApiFetch.getdata(token['mytoken'])
@@ -22,7 +22,7 @@ function App() {
  
   useEffect(()=>{
     if(!token['mytoken']){
-      window.location.href='/'
+      navigate('/')
     }
   },[token])
 

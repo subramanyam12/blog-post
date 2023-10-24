@@ -2,18 +2,18 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import ApiFetch from '../ApiFetch'
 import {useCookies} from 'react-cookie'
- //import {useNavigate} from "react-router-dom"
+ import {useNavigate} from "react-router-dom"
 
 const Login = () => {
 const [login, setlogin] = useState({username:'',password:''})
 const [islogin, setislogin] = useState(true)
 const [token,settoken] = useCookies(['mytoken'])
- //let navigate=useNavigate()
+ let navigate=useNavigate()
 
 useEffect(()=>{
   if(token['mytoken']){
-     //navigate('/blogs')
-    window.location.href='blogs'
+     navigate('/blogs')
+    // window.location.href='blogs'
   }
 },[token])
 
